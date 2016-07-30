@@ -787,7 +787,7 @@ class Session(object):
             with self.ectl:
                 hook = self.emap.get(evt[0])
             if hook is not None:
-                hook.put(evt[1:])
+                hook.put(evt[1:] + evt[0:1])
                           
     def load_classes(self):
         code, buf = self.conn.request(0x0114)
